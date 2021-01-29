@@ -60,10 +60,6 @@ public class TiDianZiXun extends AbstractJni {
         TiDianZiXun duEncrypt = new TiDianZiXun(soFilePath, classPath);
         DvmObject context = duEncrypt.vm.resolveClass("android/content/Context").newObject(null);
         //输出方法调用结果
-        String text = args[0];
-        if (text == null) {
-            text = "yidian5.0.0.01k2uq08wb_1611830597895_117022900";
-        }
         String ret = duEncrypt.myJni(method, context, new StringObject(duEncrypt.vm, "yidian5.0.0.01k2uq08wb_1611830597895_117022900"));
         System.out.printf("ret:%s", ret);
         duEncrypt.destroy();
